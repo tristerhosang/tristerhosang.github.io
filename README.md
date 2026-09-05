@@ -18,6 +18,6 @@ npm run lint     # run oxlint
 
 ## Deployment
 
-Pushes to `main` build the site and publish `dist/` to GitHub Pages via
-`.github/workflows/deploy.yml`. In the repository settings, under Pages, set the
-source to "GitHub Actions".
+The site is published to GitHub Pages from `dist/`. Set Settings → Pages → Source
+to "GitHub Actions" and add a workflow that runs `npm ci && npm run build` and
+uploads `dist/` with `actions/upload-pages-artifact` + `actions/deploy-pages`.
