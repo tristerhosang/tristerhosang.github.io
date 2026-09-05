@@ -18,6 +18,7 @@ npm run lint     # run oxlint
 
 ## Deployment
 
-The site is published to GitHub Pages from `dist/`. Set Settings → Pages → Source
-to "GitHub Actions" and add a workflow that runs `npm ci && npm run build` and
-uploads `dist/` with `actions/upload-pages-artifact` + `actions/deploy-pages`.
+GitHub Pages serves the `gh-pages` branch. A workflow on `main` runs
+`npm ci && npm run build` and pushes `dist/` to `gh-pages` with
+`peaceiris/actions-gh-pages`; Settings → Pages → Source must stay on
+"Deploy from a branch" → `gh-pages` / root.
